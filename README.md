@@ -2,13 +2,7 @@
 Running stable-baselines on Wiener using Singularity
 
 ## Preface
-Wiener currently uses Singularity 2.6.0:
-
-(base) uqjbish3@wiener ~ $ module load singularity
-(base) uqjbish3@wiener ~ $ singularity --version
-2.6.0-dist
-
-and doesn't like it if you try to use a container that was built with a newer version (I tried building a container on my local machine using Singularity 3.2 and then running the container on Wiener, it complained about an unknown file type).
+Wiener currently uses Singularity 2.6.0 and doesn't like it if you try to use a container that was built with a newer version (I tried building a container on my local machine using Singularity 3.2 and then running the container on Wiener, it complained about an unknown file type).
 It's a P.I.T.A., but to get around it you can just build the container on your local machine with the same version used on wiener - then it's happy.
 So...
 
