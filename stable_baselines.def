@@ -1,0 +1,22 @@
+Bootstrap: docker
+From: ubuntu:18.04
+
+%post
+    apt-get -y update
+    # for stable-baselines python package
+    apt-get -y install cmake libopenmpi-dev python3-dev zlib1g-dev
+    # because i like vim
+    apt-get -y install vim
+    # for cv2 python package
+    apt-get -y install libsm6 libxrender1 libfontconfig1
+    # need pip3 for python3
+    apt-get -y install python3-pip
+    # minimal ubuntu, doesn't have ssh client, needed by mpi for some reason so
+    # install it
+    apt-get -y install openssh-client
+    # install pip stuff
+    pip3 install tensorflow-gpu
+    pip3 install stable-baselines
+
+%runscript
+    echo "Don't run me bro"
