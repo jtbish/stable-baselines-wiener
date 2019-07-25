@@ -3,10 +3,10 @@ from stable_baselines.deepq.policies import MlpPolicy, CnnPolicy
 from stable_baselines import DQN
 import tensorflow as tf
 
-print("Test tensorflow device allocation")
+print("##### Test tensorflow device allocation #####\n")
 sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 
-print("Train an agent")
+print("##### Train a DQN agent #####\n")
 env = make_atari('BreakoutNoFrameskip-v4')
 
 model = DQN(CnnPolicy, env, verbose=1)
@@ -15,7 +15,7 @@ model.save("deepq_breakout")
 
 obs = env.reset()
 
-print("Test the agent - should have 0 reward because it's bad")
+print("##### Test the agent - should have 0 reward because it's bad #####\n")
 total_reward = 0
 
 for i in range(1000):
